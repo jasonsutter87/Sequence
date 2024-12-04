@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    hello world
+
+    <style>
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            gap: 8px;
+            width: 100%;
+            max-width: 648px;
+            }
+
+            .game-board .tile {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #ddd;
+                background-color: #f4f4f4;
+            }
+
+            .game-board .tile.X {
+            color: white;
+            }
+
+            .game-board .tile.obj {
+                background-color: #7b68ee; /* Light purple for objects */
+                color: white;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .tile img {
+                width: 100%;
+                height: auto;
+            }
+
+            .player-piece {
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: 70% !important;
+                margin: 0 auto;
+            }
+
+    </style>
+    <div id="game-board" class="game-board"></div>
+
+    <script type="module" src="./js/models/models.js"></script>
+    <script type="module" src="./js/site.js"></script>
 </body>
 </html>
